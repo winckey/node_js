@@ -1,8 +1,11 @@
-const express = require('express') //express를 설치했기 때문에 가져올 수 있다.
+const express = require('express')
 const app = express()
+const port = 3000
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(8080)
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
