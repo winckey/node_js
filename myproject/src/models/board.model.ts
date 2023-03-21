@@ -1,10 +1,10 @@
 import { Model, Column, DataType, ForeignKey, BelongsTo, Table } from 'sequelize-typescript';
-import { User } from './user.model';
+import  User  from './user.model';
 
 @Table({
   tableName: 'boards'
 })
-export class Board extends Model<Board> {
+export default class Board extends Model<Board>  {
   @Column({
     type: DataType.INTEGER,
     autoIncrement: true,
