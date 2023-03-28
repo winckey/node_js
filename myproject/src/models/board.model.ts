@@ -26,7 +26,7 @@ export default class Board extends Model<Board>  {
 
   @ForeignKey(() => User)
   @Column({
-    type: DataType.INTEGER,
+    type: DataType.UUID,
     allowNull: false,
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE'

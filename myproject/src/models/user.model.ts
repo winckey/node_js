@@ -5,19 +5,36 @@ import Board from './board.model';
   tableName: 'users'
 })
 export default class User extends Model<User>{
-  @Column({
-    type: DataType.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  })
-  public id!: number;
 
   @Column({
-    type: DataType.STRING,
-    allowNull: false
+    type: DataType.UUID,
+    primaryKey: true,
+    field: 'user_id'
   })
-  public name!: string;
+  userId!: string;
+  
+  @Column({
+    type: DataType.STRING(200),
+    allowNull: false,
+    field: 'email'
+  })
+  email!: string;
+
+  @Column({
+    type: DataType.STRING(200),
+    allowNull: false,
+    field: 'name'
+  })
+  name!: string;
+
+  @Column({
+    type: DataType.STRING(200),
+    allowNull: false,
+    field: 'phone'
+  })
+  phone!: string;
 
   @HasMany(() => Board)
-  public boards!: Board[];
+  boards!: Board[];
+
 }
